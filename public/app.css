@@ -2,3 +2,29 @@ h1{
     color:black;
 
 }
+
+.new-campground h1{
+    text-align: center;
+}
+.new-campground p{
+   margin-left: 50%;
+   transform: translateX(-50%);
+   margin-top: 10px;
+}
+.form-add-new{
+    width: 30%;
+    margin: 0 auto;
+}
+
+.form-add-new input{
+    margin: 15px 0;
+}
+
+.camp-img img{
+    padding: 2px;
+    height: 240px;
+    
+    width: 90%;
+}
+
+
