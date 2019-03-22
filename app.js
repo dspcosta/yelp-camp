@@ -2,21 +2,17 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const Campground = require("./models/campground");
+// const Comment = require("./models/comments");
+// const User = require("./models/user");
+const seedDB = require("./seeds");
 
+seedDB();
 mongoose.connect("mongodb://localhost:27017/yelp_camp", { useNewUrlParser: true });
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(express.static("node_modules/bootstrap/dist/css"));
-
-// SCHEMA SETUP
-let campgroundSchema = new mongoose.Schema({
-    name: String,
-    image: String,
-    description: String
-});
-
-let Campground = mongoose.model("Campground", campgroundSchema);
 
 app.get("/", function(req, res) {
     res.render("landing");
