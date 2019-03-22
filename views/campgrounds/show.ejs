@@ -1,0 +1,13 @@
+<%include ../partials/header.ejs%>
+    <div class= "container">
+        <h1><%= campground.name%></h1>
+
+        <img src="<%=campground.image%>" alt="<%=campground.name%>">
+
+        <p><%=campground.description%></p>
+    </div>
+
+    <% campground.comments.forEach(function(comment){ %>
+      <p><%= comment.author %> -  <%= comment.text%></p>
+    <%});%>
+<%include ../partials/footer.ejs%>
