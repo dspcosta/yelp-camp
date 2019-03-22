@@ -1,6 +1,6 @@
 let mongoose = require("mongoose");
 let Campground = require("./models/campground");
-let comment = require("./models/comment");
+let Comment = require("./models/comment");
 
 let data = [
     {
@@ -37,9 +37,9 @@ function seedDB() {
                         author: "Bart"
                     }, function(err, comment) {
                         if (err) {
-
+                            console.log(err);
                         } else {
-                            campground.comment.push(comment);
+                            campground.comments.push(comment);
                             campground.save();
                             console.log("Created new comment");
                         }
